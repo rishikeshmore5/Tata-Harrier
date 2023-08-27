@@ -1,0 +1,580 @@
+* {
+  margin: 0;
+}
+
+/* nav1  */
+
+.nav1 {
+  background-color: black;
+  display: flex;
+}
+
+.logo1 {
+  display: inline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 150px;
+}
+
+.nav1-content {
+  color: white;
+  padding-top: 18px;
+}
+
+.nav1-content li {
+  list-style-type: none;
+  display: inline;
+  font-family: "PT Sans", sans-serif;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.dropdown {
+  width: 13px;
+  height: auto;
+  padding-left: 10px;
+}
+
+.logo2 {
+  padding-left: 180px;
+  padding-top: 20px;
+  height: 20px;
+  width: auto;
+}
+
+/* nav2 */
+
+.nav2 {
+  background-color: #e1dddd;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.nav2-content li {
+  font-family: "IBM Plex Sans", sans-serif;
+  list-style-type: none;
+  display: inline;
+  text-align: center;
+  font-size: smaller;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* slider 1 */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.slider,
+.slider .imgs {
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  position: relative;
+}
+
+.slider {
+  height: 100%;
+  max-height: 500px;
+}
+
+.slider .imgs {
+  display: flex;
+  overflow: hidden;
+}
+
+.slider .img {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  left: 100%;
+  /* animation duration can't be greater than variable interval in JS! */
+  /* check JS for other settings */
+  animation: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0s left;
+  animation-fill-mode: forwards;
+  background-size: cover !important;
+  background-position: 50% !important;
+}
+
+/* Change images here */
+.slider .img:nth-of-type(1) {
+  background: url("https://cars.tatamotors.com/images/harrier/harrier-desktop-banner-feb-2023.jpg");
+}
+.slider .img:nth-of-type(2) {
+  background: url("https://cars.tatamotors.com/images/reddark/harrier-red-dark-desktop-banner.png");
+}
+
+.slider .img span {
+  padding: 7px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  color: #f0f0f0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.dots {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: gray;
+  border-radius: 50%;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.active-dot {
+  background: #3f3f3f;
+  cursor: default;
+}
+
+@keyframes leftNext {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes leftCurr {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes rightNext {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes rightCurr {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* section 1 */
+.section1 {
+  background-color: #201c1c;
+}
+
+.section1 div {
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  padding: 3rem 10rem 2rem 10rem;
+  font-size: large;
+}
+
+/* section 2 */
+.section2 {
+  background-color: black;
+  font-family: "PT Sans", sans-serif;
+}
+
+.section2 div {
+  color: white;
+
+  padding: 1rem 10rem 1rem 10rem;
+  font-size: 25px;
+}
+
+.section2-div1 {
+  display: inline-block;
+}
+.section2-div2 {
+  display: inline-block;
+  margin-left: 15rem;
+}
+
+.button1 {
+  background-color: black;
+  color: white;
+  border: white solid 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-bottom: 1rem;
+}
+
+.button2 {
+  background-color: black;
+  color: white;
+  border: white solid 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 6rem;
+  padding-right: 84px;
+  margin-bottom: 2rem;
+}
+
+/* section 3 */
+
+/* input animation */
+.user-input-wrp {
+  position: relative;
+  width: 19%;
+  display: inline-block;
+  padding-left: 25px;
+}
+.user-input-wrp .inputText {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #777;
+  box-shadow: none !important;
+}
+.user-input-wrp .inputText:focus {
+  border-color: red;
+  border-width: medium medium 2px;
+}
+.user-input-wrp .floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+  left: 8px;
+  transition: 0.2s ease all;
+}
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label {
+  top: 0px;
+  left: 10px;
+  font-size: 13px;
+  opacity: 1;
+}
+/* ///// */
+
+.section3 {
+  background-color: #211c1c;
+  font-family: "PT Sans", sans-serif;
+}
+
+.section3-head {
+  font-size: 28px;
+  color: white;
+  padding-left: 152px;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  display: block;
+}
+
+.section3-input {
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+.section3-content1 {
+  padding-left: 152px;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 28px;
+}
+
+.container {
+  color: white;
+
+  padding-left: 100px;
+}
+
+.checkboxes-1 {
+  padding-left: 50px;
+}
+
+.checkboxes-2 {
+  padding-left: 150px;
+}
+
+.section3-btn {
+  background-color: red;
+  padding: 10px 130px 10px 130px;
+  color: white;
+}
+
+.section4 {
+  background-color: black;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+}
+
+.section4-head {
+  font-size: 28px;
+  color: white;
+  padding-left: 152px;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  display: block;
+}
+
+.ad-video {
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding-bottom: 4rem;
+}
+
+.img1-sec5 {
+  width: 55%;
+  height: 26.88rem;
+
+  background-color: #3f3f3f;
+  float: left;
+}
+
+.section5 {
+  background-color: #3f3f3f;
+  font-family: "PT Sans", sans-serif;
+  display: inline;
+}
+
+.sec5-head {
+  font-size: 3rem;
+  font-style: italic;
+  color: red;
+  display: inline-block;
+  width: 8%;
+}
+.sec5-content {
+  background-color: #211c1c;
+  font-size: 16px;
+  display: inline-block;
+  width: 35%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  padding-top: 4%;
+  padding-bottom: 103px;
+}
+
+.sec5-footer {
+  font-size: 2rem;
+  font-style: italic;
+  color: red;
+  display: inline-block;
+}
+
+.sec5-head-2 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 3rem;
+  font-style: italic;
+  color: red;
+  display: inline-block;
+  width: 90%;
+}
+.sec5-content-2 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background-color: #211c1c;
+  font-size: 16px;
+  display: inline-block;
+  width: 35%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: auto;
+  padding-top: 4%;
+  padding-bottom: 128px;
+}
+
+.sec5-footer-2 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: red;
+  display: inline-block;
+}
+.img2-sec5 {
+  width: 55%;
+  height: 28.5rem;
+
+  background-color: #3f3f3f;
+  float: left;
+}
+
+.sec5-content-3 {
+  color: white;
+  background-color: #211c1c;
+  font-size: 16px;
+  display: inline-block;
+  width: 35%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  padding-top: 4%;
+  padding-bottom: 101px;
+}
+
+.sec5-content-5 {
+  color: white;
+  background-color: #211c1c;
+  font-size: 16px;
+  display: inline-block;
+  width: 35%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  padding-top: 4%;
+  padding-bottom: 145.8px;
+}
+
+.img5-sec5 {
+  width: 55%;
+  height: 28.442rem;
+
+  background-color: #3f3f3f;
+  float: left;
+}
+
+.section-6 {
+  font-size: 25px;
+  padding: 3rem 12rem 3rem 12rem;
+  color: red;
+  font-family: "PT Sans", sans-serif;
+  background-color: #2d2d2b;
+}
+
+.section-7 {
+  font-size: larger;
+  font-family: "PT Sans", sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-7 table {
+  padding-left: 10%;
+  width: 95%;
+  height: 75rem;
+  font-family: "PT Sans", sans-serif;
+
+  border-collapse: collapse;
+}
+
+.section-7 table td {
+  padding-left: 10%;
+  border: #dddddd;
+}
+
+.section-7 table tr:nth-child(odd) {
+  width: 100%;
+  background-color: #dddddd;
+}
+
+.section-8 {
+  font-family: "PT Sans", sans-serif;
+
+  background-color: black;
+}
+
+.sec8-head {
+  font-size: 28px;
+  color: white;
+  padding-left: 152px;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  display: block;
+}
+
+.car-slide {
+  width: 100%;
+}
+
+.car-nav img {
+  width: 16.4%;
+  margin: 0;
+}
+
+.section-9 {
+  font-family: "PT Sans", sans-serif;
+  color: grey;
+  background-color: #2d2d2b;
+}
+
+.sec9-head {
+  text-decoration: underline;
+  font-size: 20px;
+  color: red;
+  padding-left: 152px;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  display: block;
+}
+
+.slider2-img {
+  display: inline-block;
+}
+.silder2-head {
+  color: red;
+}
+
+.slider2-content {
+  width: 10rem;
+  display: inline-block;
+}
+
+.slider2-span {
+  display: inline-block;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 5rem;
+}
+
+.section-10 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background-color: #0f0f0f;
+  font-size: larger;
+  padding: 1% 10% 1% 10%;
+}
+
+.sec10-icons {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  bottom: 26px;
+}
+
+.section-11 {
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  background-color: #2d2d2b;
+  font-size: larger;
+  padding: 1% 10% 1% 10%;
+  text-align: center;
+}
+
+.last-button {
+  font-size: larger;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  background-color: #2d2d2b;
+  color: white;
+  border: solid 3px white;
+  padding: 1% 4% 1% 4%;
+}
